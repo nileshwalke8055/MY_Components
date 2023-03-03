@@ -1,0 +1,22 @@
+<template>
+    <template if:true={bookInfo} for:each={bookInfo} for:item="book" for:index="index">
+        <div key={book.Id} class=" lpage slds-m-top_large">
+            <lightning-card variant="Narrow" class="slds-m-top_medium">
+                <div class=" box slds-grid slds-m-top_medium">
+                    <div class=" coverimg slds-col slds-size_6-of-12">
+                        <lightning-formatted-rich-text value={book.Coverimages__c}></lightning-formatted-rich-text>
+                    </div>
+
+                    <div class="fields  slds-col slds-size_6-of-12">
+                        <p class="bookName slda-m-top_large">{book.Name}</p>
+                        <p class="authername slda-m-top_medium">by {book.Auther_Name__c}
+                        </p>
+                        <p class=" catagary slda-m-top_medium"> Category:-{book.Book_Category__c}</p>
+                        <p class="Language slda-m-top_medium"> Languages:-{book.Languages__c}</p>
+                        <p class="price slda-m-top_medium"> ₹{book.Price__c}</p>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+    </template>
+</template>
